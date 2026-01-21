@@ -1,7 +1,7 @@
 from pydantic import BaseModel,Field,EmailStr,computed_field
 from typing import List,Dict,Optional,Annotated
 from fastapi import FastAPI,Path,HTTPException
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse,Response
 import json
 app=FastAPI()
 
@@ -152,15 +152,21 @@ def order_place(ord:Order):
 #updating user details
 class update_u(BaseModel):
      id: Annotated[int,Field(...,description="enter the user id to be updated",examples=[1,2])]
-     name:Annotated[Optional[str],Field(...,description="enter the user name to be updated")]
-     email:Annotated[Optional[EmailStr],Field(...,description="enter the users email id to be updated",examples=["sks@gmail.com"])]
-     is_active:Annotated[Optional[bool],Field(...,description="please enter the user is active or not",examples=["true","false"])]
+     name:Annotated[Optional[str],Field(None)]
+     email:Annotated[Optional[EmailStr],Field(None)]
+     is_active:Annotated[Optional[bool],Field(None)]
 
-@app.put("update_user_details/{uid}")
+@app.put("/update_user_details")
 def update_user(user:update_u):
      data = load_data()
      for li in data["users"]:
-          if user.id not in li.id:
-               raise HTTPException(status_code=404
-                                   ,detail="user details not found")
+          if user.id == li["id"]:
+               li.update(user.model_dump(exclude_unset=True,
+                                            exclude={"id"}))
+               save_data(data)
+               return Response(status_code=204)
+     raise HTTPException(status_code=404,detail="user not found")
+              
+#deleting the data from user
+
      

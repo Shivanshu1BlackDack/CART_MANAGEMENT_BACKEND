@@ -14,8 +14,8 @@
         },
         {
             "id": 3,
-            "name": "shivanshu",
-            "email": "shivanshu@gmail.com",
+            "name": "Shivanshu",
+            "email": "xyz@example.com",
             "is_active": false
         },
         {
@@ -26,8 +26,8 @@
         },
         {
             "id": 5,
-            "name": "uday",
-            "email": "pranjal@gmail.com",
+            "name": "string",
+            "email": "user@example.com",
             "is_active": false
         }
     ],
@@ -67,7 +67,7 @@
                     "quantity": 1
                 },
                 {
-                    "product_id": 102,  
+                    "product_id": 102,
                     "quantity": 2
                 }
             ],
