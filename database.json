@@ -1,0 +1,90 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Amit Sharma",
+            "email": "amit@example.com",
+            "is_active": true
+        },
+        {
+            "id": 2,
+            "name": "Neha Verma",
+            "email": "neha@example.com",
+            "is_active": true
+        },
+        {
+            "id": 3,
+            "name": "shivanshu",
+            "email": "shivanshu@gmail.com",
+            "is_active": false
+        },
+        {
+            "id": 4,
+            "name": "aman",
+            "email": "aman@gmail.com",
+            "is_active": true
+        },
+        {
+            "id": 5,
+            "name": "uday",
+            "email": "pranjal@gmail.com",
+            "is_active": false
+        }
+    ],
+    "products": [
+        {
+            "id": 101,
+            "name": "Laptop",
+            "price": 75000,
+            "in_stock": true
+        },
+        {
+            "id": 102,
+            "name": "Wireless Mouse",
+            "price": 1200,
+            "in_stock": true
+        },
+        {
+            "id": 103,
+            "name": "Keyboard",
+            "price": 2500,
+            "in_stock": false
+        },
+        {
+            "id": 105,
+            "name": "speaker",
+            "price": 1200,
+            "in_stock": true
+        }
+    ],
+    "orders": [
+        {
+            "id": 1001,
+            "user_id": 1,
+            "items": [
+                {
+                    "product_id": 101,
+                    "quantity": 1
+                },
+                {
+                    "product_id": 102,  
+                    "quantity": 2
+                }
+            ],
+            "status": "confirmed",
+            "total_price": 77400
+        },
+        {
+            "user_id": 1,
+            "item": [
+                {
+                    "product_id": 103,
+                    "quantity": 1
+                }
+            ],
+            "status": true,
+            "total_price": 2500,
+            "id": 1002
+        }
+    ]
+}
