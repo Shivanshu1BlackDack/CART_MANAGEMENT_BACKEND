@@ -168,5 +168,13 @@ def update_user(user:update_u):
      raise HTTPException(status_code=404,detail="user not found")
               
 #deleting the data from user
-
+@app.delete("/delete_user/{uid}")
+def delete_user(uid:int):
+     data = load_data()
+     for dt in data["users"]:
+          if dt["id"] == uid:
+               data["users"].remove(dt)
+               save_data(data)
+               return JSONResponse(status_code=201,content={"message":"id deleted successfully"})
+     raise HTTPException(status_code=404,detail="user not found")
      

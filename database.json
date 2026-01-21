@@ -13,12 +13,6 @@
             "is_active": true
         },
         {
-            "id": 3,
-            "name": "Shivanshu",
-            "email": "xyz@example.com",
-            "is_active": false
-        },
-        {
             "id": 4,
             "name": "aman",
             "email": "aman@gmail.com",
